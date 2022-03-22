@@ -1,0 +1,7 @@
+C:\Users\FAGNERDEASSISMOURAPI\Desktop\Lab 2\Chapter01\Debug\Game.exe
+C:\Users\b_bri\Documents\fei\gamedev\Lab 1\Chapter01\Debug\Game.exe
+C:\Users\tiago\Desktop\Lab 1\Chapter01\Debug\Game.exe
+C:\Users\b_bri\Desktop\PONG\Lab 1\Chapter01\Debug\Game.exe
+C:\Users\uniftpadua\Downloads\Lab 2\Lab 2\Chapter01\Debug\Game.exe
+C:\Users\tiago\Desktop\Lab 2\Lab 2\Chapter01\Debug\Game.exe
+C:\Users\tiago\Desktop\Lab 2\Entity_Manager_1.0\Chapter01\Debug\Game.exe
