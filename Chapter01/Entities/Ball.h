@@ -1,10 +1,9 @@
 #pragma once
 
-#include "../Utils.h"
-#include "Entity.h"
+#include "../Utlis/MathUtils.h"
 #define BALL_H
 
-class Ball : Entity {
+class Ball {
     public:
         Vector2 pos;
         Vector2 vel;

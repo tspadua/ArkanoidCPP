@@ -12,21 +12,19 @@ void Ball::populate(float posX, float posY, float velX, float velY) {
     isInstanced = true;
 };
 
-void Ball::update(float deltaTime, Vector2 paddle1, Vector2 paddle2) {
+void Ball::update(float deltaTime, Vector2 paddle) {
     // atualiza a posi��o da bola com base na sua velocidade
     pos.x += vel.x * deltaTime;
     pos.y += vel.y * deltaTime;
 
     // atualiza a posi��o da bola se ela colidiu com a raquete
-    diff = paddle1.y - pos.y;
-    diff2 = paddle2.y - pos.y;
+    diff = paddle.x - pos.x;
     //pegue o valor absoluto de diferen�a entre o eixo y da bolinha e da raquete
     //isso � necess�rio para os casos em que no pr�ximo frame a bolinha ainda n�o esteja t�o distante da raquete
     //verifica se a bola est� na area da raquete e na mesma posi��o no eixo x
     diff = (diff > 0.0f) ? diff : -diff;
-    diff2 = (diff2 > 0.0f) ? diff2 : -diff2;
 
-    updateYDirection();
+    updateXDirection();
 };
 
 bool Ball::touchedPaddle(float paddleH) {
@@ -54,32 +52,23 @@ bool Ball::touchedPaddle(float paddleH) {
     return false;
 }
 
-void Ball::updateYDirection() {
-    if (pos.y <= thickness && vel.y < 0.0f)
+void Ball::updateXDirection() {
+    if (pos.x <= thickness && vel.x < 0.0f)
     {
-        vel.y *= -1;
+        vel.x *= -1;
     }
 
 
-    else if (pos.y >= (768 - thickness) && vel.y > 0.0f)
+    else if (pos.x >= (768 - thickness) && vel.x > 0.0f)
     {
-        vel.y *= -1;
+        vel.x *= -1;
     }
 };
 
-bool Ball::isOutLeft() {
-    return pos.x <= 0.0f;
+bool Ball::isOut() {
+    return pos.y <= 0.0f;
 };
 
-bool Ball::isOutRight() {
-    return pos.x >= 1024;
-};
-
-/*
-bool Ball::isInstanced() {
-    return isInstanced;
-}
-*/
 
 Vector2 Ball::getPos() {
     return pos;
