@@ -18,7 +18,7 @@ void EntityManager::initialize() {
         balls[0].populate(initialBallPos.x, initialBallPos.y, initialBallVel.x, initialBallVel.y);
     }
 
-	paddle.populate(10.0f, 768.0f / 2.0f, 1.0f);
+	//paddle.populate(10.0f, 768.0f / 2.0f, 1.0f);
 };
 
 
@@ -41,6 +41,6 @@ void EntityManager::update(float deltatime) {
 };
 
 void EntityManager::handleInput(Uint8* state) {
-	paddle.handleInput(state);
-}
+	//paddle.handleInput(state);
+};
 

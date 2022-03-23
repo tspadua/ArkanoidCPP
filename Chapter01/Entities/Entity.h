@@ -1,5 +1,5 @@
 #pragma once
-#include "../Utils.h"
+#include "../Utils/MathUtils.h"
 
 class Entity {
 	virtual void update(){};

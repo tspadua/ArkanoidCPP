@@ -5,7 +5,7 @@ PlayerStatus::PlayerStatus() { };
 void PlayerStatus::populate(float posX, float posY) {
 	pos.x = posX;
 	pos.y = posY;
-}
+};
 
 void PlayerStatus::update(bool isRight) {
 	float updateValue = 30.0f;
@@ -16,11 +16,8 @@ void PlayerStatus::update(bool isRight) {
 	else {
 		pos.x = pos.x - (updateValue / 2);
 	}
-}
-
-Vector2 PlayerStatus::getPos() {
-	return pos;
 };
+
 
 //int getThickness() {
 //	return thickness;
@@ -28,4 +25,4 @@ Vector2 PlayerStatus::getPos() {
 
 bool PlayerStatus::isDead() {
 	return width < 10.0f;
-}
+};

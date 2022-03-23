@@ -17,15 +17,25 @@
 	<ClCompile Include="Entities/Ball.cpp" />
 	<ClCompile Include="Entities/Paddle.cpp" />
 	<ClCompile Include="Entities/PlayerStatus.cpp" />
+	<ClCompile Include="States/StateManager.cpp" />
+	<ClCompile Include="Utils/GraphicUtils.cpp" />
+	<ClCompile Include="States/GameState.cpp" />
+	<ClCompile Include="States/PlayState.cpp" />
+	<ClCompile Include="States/MenuState.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
-	<ClCompile Include="Entities/Entity.h" />
-	<ClCompile Include="Entities/EntityManager.h" />
+	<ClInclude Include="Entities/Entity.h" />
+	<ClInclude Include="Entities/EntityManager.h" />
 	<ClInclude Include="Ball.h" />
-	<ClCompile Include="Entities/Paddle.h" />
-	<ClCompile Include="Entities/Ball.h" />
-	<ClInclude Include="Utils.h" />
+	<ClInclude Include="Entities/Paddle.h" />
+	<ClInclude Include="Entities/Ball.h" />
+	<ClInclude Include="Utils/MathUtils.h" />
+	<ClInclude Include="Utils/GraphicUtils.h" />
+	<ClInclude Include="States/StateManager.h" />
+	<ClInclude Include="States/GameState.h" />
+	<ClInclude Include="States/PlayState.h" />
+	<ClInclude Include="States/MenuState.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{BC508D87-495F-4554-932D-DD68388B63CC}</ProjectGuid>

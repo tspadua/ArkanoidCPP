@@ -1,7 +1,7 @@
 #pragma once
 
 #include "SDL/SDL.h"
-#include "../Utils.h"
+#include "../Utils/MathUtils.h"
 #include "Entity.h"
 #include <stdint.h>
 
@@ -24,5 +24,5 @@ public:
     void populate(float posX, float posY, float vel);
     void update(){};
     void handleInput(Uint8* state);
-    void handleCollision();
+    //void handleCollision();
 };

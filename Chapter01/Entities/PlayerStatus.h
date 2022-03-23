@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Utils.h"
+#include "../Utils/MathUtils.h"
 #define PLAYERSTATUS_H
 
 class PlayerStatus {
@@ -14,8 +14,6 @@ public:
 
     void populate(float posX, float posY);
     void update(bool isRight);
-    Vector2 getPos();
-    //int getThickness();
 
     bool isDead();
 };

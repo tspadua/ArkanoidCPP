@@ -4,11 +4,12 @@
 #include <vector>
 #include <stdint.h>
 
+#define ENTITYMANAGER_H
 class EntityManager {
 public:
-    std::vector<Entity> entities;
+    //std::vector<Entity> entities;
     //std::vector<Tile> tiles;
-    Paddle paddle;
+    //Paddle paddle;
     Ball balls[10] = {};
     //static Ball ball;
 
@@ -18,9 +19,9 @@ public:
 
     void update(float deltaTime);
 
-    void draw();
+    //void draw();
 
-    void handleCollisions();
+    //void handleCollisions();
 
     void handleInput(Uint8* state);
 };

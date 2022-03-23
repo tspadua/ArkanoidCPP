@@ -41,7 +41,7 @@ bool Ball::touchedPaddle(float paddleH) {
         vel.x *= -1.0f;
         return true;
     }
-    if(
+    if (
         diff2 <= paddleH / 2.0f &&
         // Estamos na posicao x correta
         pos.x <= 1000.0f && pos.x >= 995.0f &&
@@ -52,7 +52,7 @@ bool Ball::touchedPaddle(float paddleH) {
         return true;
     }
     return false;
-}
+};
 
 void Ball::updateYDirection() {
     if (pos.y <= thickness && vel.y < 0.0f)
@@ -80,11 +80,3 @@ bool Ball::isInstanced() {
     return isInstanced;
 }
 */
-
-Vector2 Ball::getPos() {
-    return pos;
-};
-
-Vector2 Ball::getVel() {
-    return vel;
-};

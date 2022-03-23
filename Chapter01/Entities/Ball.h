@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Utils.h"
+#include "../Utils/MathUtils.h"
 #include "Entity.h"
 #define BALL_H
 
@@ -25,7 +25,4 @@ class Ball : Entity {
         bool isOutLeft();
         bool isOutRight();
         //bool isInstanced();
-
-        Vector2 getPos();
-        Vector2 getVel();
 };
