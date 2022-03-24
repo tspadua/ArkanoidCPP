@@ -5,3 +5,18 @@
 PlayState GameState::Play;
 
 MenuState GameState::Menu;
+
+void GameState::initialize(EntityManager& entityManager)
+{
+
+}
+
+void GameState::update(EntityManager& entityManager)
+{
+
+}
+
+void GameState::exit(EntityManager& entityManager)
+{
+
+}

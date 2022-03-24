@@ -1,5 +1,6 @@
+#pragma once
+
 #include "Ball.h"
-#include "Entity.h"
 #include "Paddle.h"
 #include <vector>
 #include <stdint.h>
@@ -9,7 +10,7 @@ class EntityManager {
 public:
     //std::vector<Entity> entities;
     //std::vector<Tile> tiles;
-    //Paddle paddle;
+    Paddle paddle;
     Ball balls[10] = {};
     //static Ball ball;
 

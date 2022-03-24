@@ -34,14 +34,12 @@ bool Game::Initialize()
 	if (!graphicUtils.initializeWindow()) {
 		return false;
 	}
-
+	
 	//Set state to play state
 	//stateManager.setState(state.Play);
 	stateManager.state = &GameState::Play; // state is stored as a pointer to an implementation of GameState (e.g.: Play)
-
-
-    //TODO: initialize game's entities here
-	//EntityManager();
+	//stateManager.state->entityManager = &entityManager;
+	stateManager.state->initialize(stateManager.entityManager);
 
 	return true;
 }
@@ -88,7 +86,7 @@ void Game::ProcessInput()
 void Game::UpdateGame()
 {
 	graphicUtils.updateFrame();
-
+	stateManager.state->update(stateManager.entityManager);
 	//TODO:  update paddle position here
 
 

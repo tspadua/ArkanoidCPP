@@ -1,6 +1,4 @@
-﻿
-#include "Entity.h"
-#include "Paddle.h"
+﻿#include "Paddle.h"
 
 Paddle::Paddle() {};
 

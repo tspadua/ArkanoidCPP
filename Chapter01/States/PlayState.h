@@ -6,5 +6,7 @@
 class PlayState : public GameState {
 public:
 	PlayState();
-	virtual void update();
+	float test;
+	void update(EntityManager& entityManager);
+	void initialize(EntityManager& entityManager);
 };

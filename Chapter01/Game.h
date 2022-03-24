@@ -8,10 +8,12 @@
 
 #pragma once
 #include "States/StateManager.h"
+//#include "Entities/EntityManager.h"
 #include "Utils/GraphicUtils.h"
 #include "SDL/SDL.h"
 
 // Game class
+#define GAME_h
 class Game
 {
 	public:
@@ -32,9 +34,11 @@ class Game
 
 		bool isRunning;
 
-		//TODO: instance game's entities here
-		GraphicUtils graphicUtils;
+
+		GraphicUtils graphicUtils = GraphicUtils();
 		
-		StateManager stateManager;
+		StateManager stateManager = StateManager();
+
+		//EntityManager entityManager = EntityManager();
 };
 
