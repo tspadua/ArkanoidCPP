@@ -12,9 +12,9 @@ public:
     Vector2 pos;
     Vector2 vel;
     int direction = 0;
-    float speed = 0;
-    float height = 40.0f;
-    float width = 15.0f;
+    float speed;
+    float height = 15.0f;
+    float width = 80.0f;
     SDL_Scancode leftInputKey;
     SDL_Scancode rightInputKey;
 

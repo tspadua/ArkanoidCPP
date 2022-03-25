@@ -15,22 +15,22 @@ void EntityManager::initialize() {
 
     balls[0].populate(initialBallPosX, initialBallPosY, initialBallVelX, initialBallVelY);
     
-	paddle.populate(10.0f, 768.0f / 2.0f, 1.0f, SDL_SCANCODE_A, SDL_SCANCODE_D);
+	paddle.populate(1024.0f / 2 - (paddle.width / 2), 768.0f - 60.f, 300.0f, SDL_SCANCODE_A, SDL_SCANCODE_D);
 };
 
 
 void EntityManager::update(float deltaTime) {
 	if (paddle.direction != 0)
 	{
-		paddle.pos.y += paddle.direction * paddle.speed * deltaTime;
+		paddle.pos.x += paddle.direction * paddle.speed * deltaTime;
 		// verifique que a raquete n�o se move para fora da tela - usamos "thickness", que definimos como a altura dos elementos
-		if (paddle.pos.y < (paddle.height / 2.0f + paddle.width))
+		if (paddle.pos.x <= 5)
 		{
-			paddle.pos.y = paddle.height / 2.0f + paddle.width;
+			paddle.pos.x = 5;
 		}
-		else if (paddle.pos.y > (768.0f - paddle.height / 2.0f - paddle.width))
+		else if (paddle.pos.x >= (1024 - paddle.width - 5))
 		{
-			paddle.pos.y = 768.0f - paddle.height / 2.0f - paddle.width;
+			paddle.pos.x = (1024 - paddle.width - 5);
 		}
 	}
 };

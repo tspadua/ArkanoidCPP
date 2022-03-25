@@ -23,6 +23,6 @@ public:
     
     SDL_Window* mWindow;
     SDL_Renderer* mRenderer;
-    Uint32 mTicksCount;
+    Uint32 mTicksCount = 0;
 
 };
