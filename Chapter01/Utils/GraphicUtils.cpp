@@ -45,7 +45,7 @@ bool GraphicUtils::initializeWindow() {
     return true;
 }
 
-void GraphicUtils::updateFrame() {
+float GraphicUtils::updateFrame() {
     // Espere que 16ms tenham passado desde o �ltimo frame - limitando os frames
 	while (!SDL_TICKS_PASSED(SDL_GetTicks(), mTicksCount + 16));
 
@@ -61,11 +61,13 @@ void GraphicUtils::updateFrame() {
 
 	// atualize a contagem de ticks par ao pr�ximo frame
 	mTicksCount = SDL_GetTicks();
+
+	return deltaTime;
 }
 
 
 //                --------------->			std::vector<Entity>& entities
-void GraphicUtils::drawObjects() {
+void GraphicUtils::drawObjects(EntityManager& entities) {
     // Setamos a cor de fundo par azul
 	SDL_SetRenderDrawColor(
 		mRenderer,
@@ -110,7 +112,14 @@ void GraphicUtils::drawObjects() {
 
     //TODO: draw entities
     //entities.draw()
-
+	SDL_Rect paddle {
+		entities.paddle.pos.x,			// Top left x
+		entities.paddle.pos.y,			// Top left y
+		entities.paddle.width,		    // Width
+		entities.paddle.height	        // Height
+	};
+	SDL_SetRenderDrawColor(mRenderer, 0, 0, 0, 255);
+	SDL_RenderFillRect(mRenderer, &paddle);
 
 
 	SDL_SetRenderDrawColor(mRenderer, 255, 255, 0, 255);

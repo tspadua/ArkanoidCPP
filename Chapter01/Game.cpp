@@ -81,14 +81,14 @@ void Game::ProcessInput()
 
 
 	//TODO: paddle inputs goes here
+	stateManager.entityManager.handleInput(keystate);
 }
 
 void Game::UpdateGame()
 {
-	graphicUtils.updateFrame();
-	stateManager.state->update(stateManager.entityManager);
+	float deltaTime = graphicUtils.updateFrame();
+	stateManager.state->update(stateManager.entityManager, deltaTime);
 	//TODO:  update paddle position here
-
 
 	//TODO: player's death logic
 	// if (player.isDead())
@@ -111,7 +111,7 @@ void Game::UpdatePoints(int lado)
 //Desenhando a tela do jogo
 void Game::GenerateOutput()
 {
-	graphicUtils.drawObjects();
+	graphicUtils.drawObjects(stateManager.entityManager);
 }
 
 //Para encerrar o jogo

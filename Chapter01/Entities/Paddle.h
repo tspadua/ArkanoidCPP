@@ -15,14 +15,16 @@ public:
     float speed = 0;
     float height = 40.0f;
     float width = 15.0f;
+    SDL_Scancode leftInputKey;
+    SDL_Scancode rightInputKey;
 
     Uint8* moveToRightKey;
     Uint8* moveToLeftKey;
 
     Paddle();
 
-    void populate(float posX, float posY, float vel);
+    void populate(float posX, float posY, float vel, SDL_Scancode leftInput, SDL_Scancode rigthInput);
     void update(){};
-    void handleInput(Uint8* state);
+    void handleInput(const Uint8* state);
     //void handleCollision();
 };

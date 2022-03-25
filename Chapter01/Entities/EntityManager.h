@@ -24,5 +24,5 @@ public:
 
     //void handleCollisions();
 
-    void handleInput(Uint8* state);
+    void handleInput(const Uint8* state);
 };

@@ -3,6 +3,7 @@
 #include "SDL/SDL.h"
 #include <vector>
 #include "../Entities/Entity.h"
+#include "../Entities/EntityManager.h"
 #define GRAPHICUTILS_H
 
 class GraphicUtils {
@@ -13,10 +14,10 @@ public:
 
     bool initializeWindow();
 
-    void updateFrame();
+    float updateFrame();
 
     //void drawObjects(std::vector<Entity>& entities);
-    void drawObjects();
+    void drawObjects(EntityManager& entities);
 
     void shutdown();
     

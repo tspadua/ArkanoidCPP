@@ -2,10 +2,12 @@
 
 Paddle::Paddle() {};
 
-void Paddle::populate(float posX, float posY, float vel) {
+void Paddle::populate(float posX, float posY, float vel, SDL_Scancode leftInput, SDL_Scancode rigthInput) {
     pos.x = posX;
     pos.y = posY;
     speed = vel;
+    leftInputKey = leftInput;
+    rightInputKey = rigthInput;
 };
 
 /*
@@ -14,14 +16,13 @@ void Paddle::update(float deltaTime) {
 };
 */
 
-void Paddle::handleInput(Uint8* state) {
+void Paddle::handleInput(const Uint8* state) {
     direction = 0;
-
-    if (state[SDL_SCANCODE_A])
+    if (state[leftInputKey])
     {
         direction -= 1;
     }
-    if (state[SDL_SCANCODE_D])
+    if (state[rightInputKey])
     {
         direction += 1;
     }
