@@ -80,7 +80,6 @@ void Game::ProcessInput()
 	};
 
 
-	//TODO: paddle inputs goes here
 	stateManager.entityManager.handleInput(keystate);
 }
 

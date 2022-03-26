@@ -2,6 +2,7 @@
 
 #include "../Utils/MathUtils.h"
 #include "Entity.h"
+#include "Paddle.h"
 #define BALL_H
 
 class Ball : Entity {
@@ -18,9 +19,9 @@ class Ball : Entity {
         Ball();
 
         void populate(float posX, float posY, float velX, float velY);
-        void update(float deltaTime, Vector2 paddle1, Vector2 paddle2);
-        bool touchedPaddle(float paddleH);
-        void updateYDirection();
+        void update(float deltaTime, Paddle paddle);
+        bool touchedPaddle(Paddle paddle);
+        void updateDirection();
 
         bool isOutLeft();
         bool isOutRight();

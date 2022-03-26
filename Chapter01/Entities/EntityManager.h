@@ -1,18 +1,21 @@
 #pragma once
 
+#include "SDL/SDL.h"
 #include "Ball.h"
 #include "Paddle.h"
 #include <vector>
 #include <stdint.h>
 
 #define ENTITYMANAGER_H
+
+const int  maxBalls = 10;
+
 class EntityManager {
 public:
     //std::vector<Entity> entities;
     //std::vector<Tile> tiles;
     Paddle paddle;
-    Ball balls[10] = {};
-    //static Ball ball;
+    Ball balls[maxBalls] = {};
 
     EntityManager();
 
@@ -22,7 +25,7 @@ public:
 
     //void draw();
 
-    //void handleCollisions();
+    // void handleCollisions();
 
     void handleInput(const Uint8* state);
 };

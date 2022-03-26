@@ -121,6 +121,19 @@ void GraphicUtils::drawObjects(EntityManager& entities) {
 	SDL_SetRenderDrawColor(mRenderer, 0, 0, 0, 255);
 	SDL_RenderFillRect(mRenderer, &paddle);
 
+	for (int i = 0; i < maxBalls; i++) {
+		//mudar a cor do renderizador para a bola
+		SDL_SetRenderDrawColor(mRenderer, 255, 255, 0, 255);
+		// Draw ball
+		SDL_Rect ball{
+			static_cast<int>(entities.balls[i].pos.x - entities.balls[i].thickness / 2),
+			static_cast<int>(entities.balls[i].pos.y - entities.balls[i].thickness / 2),
+			entities.balls[i].thickness,
+			entities.balls[i].thickness
+		};
+		SDL_RenderFillRect(mRenderer, &ball);
+	}
+
 
 	SDL_SetRenderDrawColor(mRenderer, 255, 255, 0, 255);
 
