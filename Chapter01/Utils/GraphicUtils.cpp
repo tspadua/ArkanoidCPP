@@ -134,6 +134,24 @@ void GraphicUtils::drawObjects(EntityManager& entities) {
 		SDL_RenderFillRect(mRenderer, &ball);
 	}
 
+	for (int i = 0; i < maxTiles; i++) {
+		if (entities.tiles[i].resistance > 0) {
+			//mudar a cor do renderizador para a bola
+			int red = 25 * entities.tiles[i].resistance;
+			int green = 25 * entities.tiles[i].resistance;
+			int blue = 25 * entities.tiles[i].resistance;
+			SDL_SetRenderDrawColor(mRenderer, red, green, blue, 255);
+			// Draw Tile
+			SDL_Rect tile{
+				entities.tiles[i].pos.x,			// Top left x
+				entities.tiles[i].pos.y,			// Top left y
+				entities.tiles[i].width,		    // Width
+				entities.tiles[i].height
+			};
+			SDL_RenderFillRect(mRenderer, &tile);
+		}
+	}
+
 
 	SDL_SetRenderDrawColor(mRenderer, 255, 255, 0, 255);
 

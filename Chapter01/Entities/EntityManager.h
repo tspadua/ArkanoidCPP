@@ -2,19 +2,19 @@
 
 #include "SDL/SDL.h"
 #include "Ball.h"
+#include "Tile.h"
 #include "Paddle.h"
-#include <vector>
 #include <stdint.h>
 
 #define ENTITYMANAGER_H
 
-const int  maxBalls = 10;
-
+const int maxBalls = 10;
+const int maxTiles = 3;
 class EntityManager {
 public:
     //std::vector<Entity> entities;
-    //std::vector<Tile> tiles;
     Paddle paddle;
+    Tile tiles[maxTiles] = {};
     Ball balls[maxBalls] = {};
 
     EntityManager();

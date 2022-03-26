@@ -5,8 +5,10 @@ Ball::Ball() {};
 void Ball::populate(float posX, float posY, float velX, float velY) {
     pos.x = posX;
     pos.y = posY;
-    vel.x = velX;
-    vel.y = velY;
+    //vel.x = velX;
+    //vel.y = velY;
+    vel.x = -70;
+    vel.y = 1000;
 
     isInstanced = true;
 };
@@ -33,6 +35,51 @@ bool Ball::touchedPaddle(Paddle paddle) {
     if (diff <= paddle.width && pos.y >= paddle.pos.y && pos.y <= (paddle.pos.y + paddle.height) && vel.y > 0.0f)
     {
         vel.y *= -1.0f;
+        return true;
+    }
+
+    return false;
+};
+
+bool Ball::touchedTile(Tile& tile) {
+
+    //verify left collision
+    if (vel.x > 0.0f 
+        && pos.y >= tile.pos.y && pos.y <= (tile.pos.y + tile.height)
+        && pos.x >= tile.pos.x && pos.x <= (tile.pos.x + tile.height))
+    {
+        tile.resistance -= 1;
+        vel.x *= -1;
+        return true;
+    }
+
+    //verify right collision
+    if (vel.x < 0.0f
+        && pos.y >= tile.pos.y && pos.y <= (tile.pos.y + tile.height)
+        && pos.x >= (tile.pos.x + tile.width - tile.height) && pos.x <= (tile.pos.x + tile.width))
+    {
+        tile.resistance -= 1;
+        vel.x *= -1;
+        return true;
+    }
+
+    //verify up collision
+    if (vel.y > 0.0f
+        && pos.x >= tile.pos.x && pos.x <= (tile.pos.x + tile.width)
+        && pos.y >= tile.pos.y && pos.y <= (tile.pos.y + tile.height))
+    {
+        tile.resistance -= 1;
+        vel.y *= -1;
+        return true;
+    }
+
+    //verify down collision
+    if (vel.y < 0.0f
+        && pos.x >= tile.pos.x && pos.x <= (tile.pos.x + tile.width)
+        && pos.y >= tile.pos.y && pos.y <= (tile.pos.y + tile.height))
+    {
+        tile.resistance -= 1;
+        vel.y *= -1;
         return true;
     }
 

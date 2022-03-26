@@ -17,6 +17,7 @@
 	<ClCompile Include="Entities/Ball.cpp" />
 	<ClCompile Include="Entities/Paddle.cpp" />
 	<ClCompile Include="Entities/PlayerStatus.cpp" />
+	<ClCompile Include="Entities/Tile.cpp" />
 	<ClCompile Include="States/StateManager.cpp" />
 	<ClCompile Include="Utils/GraphicUtils.cpp" />
 	<ClCompile Include="States/GameState.cpp" />
@@ -27,6 +28,7 @@
     <ClInclude Include="Game.h" />
 	<ClInclude Include="Entities/Entity.h" />
 	<ClInclude Include="Entities/EntityManager.h" />
+	<ClInclude Include="Entities/Tile.h" />
 	<ClInclude Include="Ball.h" />
 	<ClInclude Include="Entities/Paddle.h" />
 	<ClInclude Include="Entities/Ball.h" />

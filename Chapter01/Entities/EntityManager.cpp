@@ -16,6 +16,17 @@ void EntityManager::initialize() {
     balls[0].populate(initialBallPosX, initialBallPosY, initialBallVelX, initialBallVelY * -1);
     
 	paddle.populate(1024.0f / 2 - (paddle.width / 2), 768.0f - 60.f, 300.0f, SDL_SCANCODE_A, SDL_SCANCODE_D);
+
+	float posX = 15;
+	float posY = 50;
+	int resistance = 1;
+	for (int i = 0; i < maxTiles; i++) {
+		posX += (tiles[i].width + 20);
+
+		//posY += 15;
+
+		tiles[i].populate(posX, posY, resistance);		resistance++;
+	}
 };
 
 
@@ -46,6 +57,17 @@ void EntityManager::update(float deltaTime) {
 					//balls[i + 1].populate(newPos.x, newPos.y, (newVel.x) * 1.2f, newVel.y * -1.0f);
 				}
 			}
+
+			for (int j = 0; j < maxTiles; j++) {
+				if (tiles[j].resistance > 0) {
+					bool touched = balls[i].touchedTile(tiles[j]);
+					if (tiles[j].resistance == 0 && touched) {
+						// update score here
+					}
+
+				}
+			}
+			
 
 			if (balls[i].isOutLeft()) {
 				//lado = 1;
