@@ -14,7 +14,7 @@ public:
     int direction = 0;
     float speed;
     float height = 15.0f;
-    float width = 2080.0f;
+    float width = 250.0f;
     SDL_Scancode leftInputKey;
     SDL_Scancode rightInputKey;
 

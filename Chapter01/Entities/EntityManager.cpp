@@ -17,15 +17,25 @@ void EntityManager::initialize() {
     
 	paddle.populate(1024.0f / 2 - (paddle.width / 2), 768.0f - 60.f, 300.0f, SDL_SCANCODE_A, SDL_SCANCODE_D);
 
-	float posX = 15;
+	float posX = 0;
 	float posY = 50;
-	int resistance = 1;
-	for (int i = 0; i < maxTiles; i++) {
+	int resistance = 2;
+	for (int i = 0; i < maxTiles / numRows; i++) {
 		posX += (tiles[i].width + 20);
 
-		//posY += 15;
+		posY += 15;
 
-		tiles[i].populate(posX, posY, resistance);		resistance++;
+		tiles[i].populate(posX, posY, resistance);
+	}
+
+	posY += 60;
+	posX = 0;
+	for (int i = (maxTiles / numRows); i < (maxTiles / numRows) + (maxTiles / numRows); i++) {
+		posX += (tiles[i].width + 20);
+
+		posY += 15;
+
+		tiles[i].populate(posX, posY, resistance);
 	}
 };
 

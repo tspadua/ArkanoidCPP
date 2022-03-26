@@ -5,10 +5,10 @@ Ball::Ball() {};
 void Ball::populate(float posX, float posY, float velX, float velY) {
     pos.x = posX;
     pos.y = posY;
-    //vel.x = velX;
-    //vel.y = velY;
-    vel.x = -70;
-    vel.y = 1000;
+    vel.x = velX;
+    vel.y = velY;
+    //vel.x = -70;
+    //vel.y = 1000;
 
     isInstanced = true;
 };
@@ -32,9 +32,19 @@ void Ball::update(float deltaTime, Paddle paddle) {
 };
 
 bool Ball::touchedPaddle(Paddle paddle) {
-    if (diff <= paddle.width && pos.y >= paddle.pos.y && pos.y <= (paddle.pos.y + paddle.height) && vel.y > 0.0f)
+    //if (diff <= paddle.width / 2 + 
+    //    && pos.y >= paddle.pos.y && pos.y <= (paddle.pos.y + paddle.height) && vel.y > 0.0f)
+    //{
+    //    vel.y *= -1.0f;
+    //    return true;
+    //}
+
+    //verify up collision
+    if (vel.y > 0.0f
+        && pos.x >= paddle.pos.x && pos.x <= (paddle.pos.x + paddle.width)
+        && pos.y >= paddle.pos.y && pos.y <= (paddle.pos.y + paddle.height))
     {
-        vel.y *= -1.0f;
+        vel.y *= -1;
         return true;
     }
 

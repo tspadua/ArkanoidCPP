@@ -9,7 +9,8 @@
 #define ENTITYMANAGER_H
 
 const int maxBalls = 10;
-const int maxTiles = 3;
+const int maxTiles = 18;
+const int numRows = 2;
 class EntityManager {
 public:
     //std::vector<Entity> entities;

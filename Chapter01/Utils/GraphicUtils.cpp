@@ -137,9 +137,9 @@ void GraphicUtils::drawObjects(EntityManager& entities) {
 	for (int i = 0; i < maxTiles; i++) {
 		if (entities.tiles[i].resistance > 0) {
 			//mudar a cor do renderizador para a bola
-			int red = 25 * entities.tiles[i].resistance;
-			int green = 25 * entities.tiles[i].resistance;
-			int blue = 25 * entities.tiles[i].resistance;
+			int red = 255 - 25 * entities.tiles[i].resistance * 3;
+			int green = 255 - 25 * entities.tiles[i].resistance * 2;
+			int blue = 255 - 25 * entities.tiles[i].resistance * 1;
 			SDL_SetRenderDrawColor(mRenderer, red, green, blue, 255);
 			// Draw Tile
 			SDL_Rect tile{
