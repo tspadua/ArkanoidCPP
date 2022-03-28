@@ -7,6 +7,7 @@
 // forward declarations of derived gamestates
 class PlayState;
 class MenuState;
+#include "SDL/SDL.h"
 #include "../Entities/EntityManager.h"
 
 #define GAMESTATE_H
@@ -19,5 +20,5 @@ public:
     virtual void update(EntityManager& entityManager, float deltaTime);
     virtual void initialize(EntityManager& entityManager);
     virtual void exit(EntityManager& entityManager);
-    float test;
+    virtual GameState* handleInput(EntityManager& entityManager, const Uint8* keystate);
 };

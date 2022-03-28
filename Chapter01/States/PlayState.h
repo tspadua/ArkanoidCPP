@@ -6,7 +6,8 @@
 class PlayState : public GameState {
 public:
 	PlayState();
-	float test;
 	void update(EntityManager& entityManager, float deltaTime);
 	void initialize(EntityManager& entityManager);
+	void exit(EntityManager& entityManager);
+	GameState* handleInput(EntityManager& entityManager, const Uint8* keystate);
 };

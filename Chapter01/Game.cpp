@@ -79,8 +79,14 @@ void Game::ProcessInput()
 		stateManager.state = &GameState::Menu;
 	};
 
+	// handle state changes
+	GameState* state_ = stateManager.state->handleInput(stateManager.entityManager, keystate);
+	if (state_ != NULL)
+	{
+		stateManager.state = state_;
 
-	stateManager.entityManager.handleInput(keystate);
+		stateManager.state->initialize(stateManager.entityManager);
+	}
 }
 
 void Game::UpdateGame()

@@ -20,3 +20,8 @@ void GameState::exit(EntityManager& entityManager)
 {
 
 }
+
+GameState* GameState::handleInput(EntityManager& entityManager, const Uint8* keystate)
+{
+    return NULL;
+}
