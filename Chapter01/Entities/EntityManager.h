@@ -22,7 +22,7 @@ public:
 
     void initialize();
 
-    void update(float deltaTime);
+    bool update(float deltaTime);
 
     //void draw();
 

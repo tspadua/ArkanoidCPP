@@ -11,9 +11,9 @@ void GameState::initialize(EntityManager& entityManager)
 
 }
 
-void GameState::update(EntityManager& entityManager, float deltaTime)
+bool GameState::update(EntityManager& entityManager, float deltaTime)
 {
-
+	return true;
 }
 
 void GameState::exit(EntityManager& entityManager)

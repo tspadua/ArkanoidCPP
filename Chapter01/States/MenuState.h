@@ -5,5 +5,5 @@
 class MenuState : public GameState {
 public:
 	MenuState();
-	void update();
+	bool update();
 };

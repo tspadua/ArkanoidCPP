@@ -16,7 +16,7 @@ public:
     static PlayState Play;
     static MenuState Menu;
     virtual ~GameState() {}; // destructor
-    virtual void update(EntityManager& entityManager, float deltaTime);
+    virtual bool update(EntityManager& entityManager, float deltaTime);
     virtual void initialize(EntityManager& entityManager);
     virtual void exit(EntityManager& entityManager);
     float test;

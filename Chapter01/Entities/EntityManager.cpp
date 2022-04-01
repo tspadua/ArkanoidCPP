@@ -40,7 +40,7 @@ void EntityManager::initialize() {
 };
 
 
-void EntityManager::update(float deltaTime) {
+bool EntityManager::update(float deltaTime) {
 	if (paddle.direction != 0)
 	{
 		paddle.pos.x += paddle.direction * paddle.speed * deltaTime;
@@ -77,27 +77,33 @@ void EntityManager::update(float deltaTime) {
 
 				}
 			}
+
+			if (balls[i].pos.y > paddle.pos.y + paddle.height) {
+				return false;
+			}
+
+			return true;
 			
 
-			if (balls[i].isOutLeft()) {
-				//lado = 1;
-				//UpdatePoints(lado);
-				//Reposition();
-				//printf("Pontuacao player 1: %d\n", p1Score);
-				//printf("Pontuacao player 2: %d\n\n", p2Score);
-				bool isRight = false;
-				//player1HP.update(isRight);
-			}
+			//if (balls[i].isOutLeft()) {
+			//	//lado = 1;
+			//	//UpdatePoints(lado);
+			//	//Reposition();
+			//	//printf("Pontuacao player 1: %d\n", p1Score);
+			//	//printf("Pontuacao player 2: %d\n\n", p2Score);
+			//	bool isRight = false;
+			//	//player1HP.update(isRight);
+			//}
 
-			if (balls[i].isOutRight()) {
-				//lado = 0;
-				//UpdatePoints(lado);
-				//Reposition();
-				//printf("Pontuacao player 1: %d\n", p1Score);
-				//printf("Pontuacao player 2: %d\n\n", p2Score);
-				bool isRight = true;
-				//player2HP.update(isRight);
-			}
+			//if (balls[i].isOutRight()) {
+			//	//lado = 0;
+			//	//UpdatePoints(lado);
+			//	//Reposition();
+			//	//printf("Pontuacao player 1: %d\n", p1Score);
+			//	//printf("Pontuacao player 2: %d\n\n", p2Score);
+			//	bool isRight = true;
+			//	//player2HP.update(isRight);
+			//}
 		}
 	}
 };

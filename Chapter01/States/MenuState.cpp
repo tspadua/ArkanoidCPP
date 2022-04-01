@@ -2,5 +2,6 @@
 
 MenuState::MenuState() {};
 
-void MenuState::update() {
+bool MenuState::update() {
+	return true;
 };

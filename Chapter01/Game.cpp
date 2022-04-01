@@ -65,7 +65,8 @@ void Game::ProcessInput()
 			// If we get an SDL_QUIT event, end loop
 		case SDL_QUIT:
 			//stateManager.setState(state.Menu);
-			stateManager.state = &GameState::Menu;
+			//stateManager.state = &GameState::Menu;
+			isRunning = false;
 			break;
 		}
 	}
@@ -76,7 +77,8 @@ void Game::ProcessInput()
 	if (keystate[SDL_SCANCODE_ESCAPE])
 	{
 		//stateManager.setState(state.Menu);
-		stateManager.state = &GameState::Menu;
+		//stateManager.state = &GameState::Menu;
+		isRunning = false;
 	};
 
 
@@ -86,7 +88,8 @@ void Game::ProcessInput()
 void Game::UpdateGame()
 {
 	float deltaTime = graphicUtils.updateFrame();
-	stateManager.state->update(stateManager.entityManager, deltaTime);
+	isRunning = stateManager.state->update(stateManager.entityManager, deltaTime);
+
 	//TODO:  update paddle position here
 
 	//TODO: player's death logic

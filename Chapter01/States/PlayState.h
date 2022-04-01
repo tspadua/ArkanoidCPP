@@ -7,6 +7,6 @@ class PlayState : public GameState {
 public:
 	PlayState();
 	float test;
-	void update(EntityManager& entityManager, float deltaTime);
+	bool update(EntityManager& entityManager, float deltaTime);
 	void initialize(EntityManager& entityManager);
 };
